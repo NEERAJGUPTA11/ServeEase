@@ -104,6 +104,7 @@ public class JobDAO {
 		try {
 			String sql = "select * from jobs where id=?";
 			PreparedStatement ps = conn.prepareStatement(sql);
+			
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 
@@ -170,6 +171,7 @@ public class JobDAO {
 		return f;
 	}
 	
+	//or
 	public List<Jobs> getJobsORLocationAndCate (String category, String location) {
 		List<Jobs> list = new ArrayList<Jobs>();
 		Jobs j = null;
@@ -198,7 +200,7 @@ public class JobDAO {
 		}
 
 
-
+//and
 public List<Jobs> getJobsAndLocationAndCate (String category, String location) {
 	List<Jobs> list = new ArrayList<Jobs>();
 	Jobs j = null;
